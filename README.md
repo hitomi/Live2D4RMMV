@@ -14,6 +14,7 @@ Live2D load <name for use> <model name>
 then the model will load and auto hide
 
 **YOU MUST LOAD MODEL BEFORE USE IT**
+
 Live2D show/fadeIn <name>
 
     Live2D show shizuku1
