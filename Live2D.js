@@ -77,19 +77,53 @@
                 var model = $gameScreen.getLive2DModel(args[1]);
                 if (model) model.setExpression(args[2]);
                 break;
+			// 移除LiveModel
+			case 'destroy':
+				{
+					var model = $gameScreen.getLive2DModel(args[1]);
+					if (model) 
+					{
+						$gameScreen.removeLive2DModel(args[1]);
+					}
+                    
+					break;
+				}
+            // 清空表单
+			case 'clearall':
+				{
+				    var model = $gameScreen.getLive2DModel(args[1]);
+					if (model) 
+					{
+						$gameScreen.clearLive2DModels(args[1]);
+					}
+                    	
+					break;
+				}
             // 模型位置
             case 'pos':
                 // TODO
                 var model = $gameScreen.getLive2DModel(args[1]);
+				
                 switch (args[2]) {
                 case 'left':
-                    if (model) model.x = 0;
+                    if (model) 
+					{
+						model.x = 0;
+					}
                     break;
                 case 'right':
-                    if (model) model.x = Graphics.width - model.width;
+                    if (model) 
+					{
+						model.x = Graphics.width - model.width;
+					}
                     break;
                 default:
-                    if (model) model.x = parseInt(args[2], 10);
+                    if (model) 
+					{
+						model.x = parseInt(args[2], 10);
+                        // 添加y坐标
+						model.y = parseInt(args[3], 10);
+					}
                     break;
                 }
             break;
