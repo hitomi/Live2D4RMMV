@@ -91,11 +91,7 @@
             // 清空表单
 			case 'clearall':
 				{
-				    var model = $gameScreen.getLive2DModel(args[1]);
-					if (model) 
-					{
-						$gameScreen.clearLive2DModels(args[1]);
-					}
+					$gameScreen.clear();
                     	
 					break;
 				}
